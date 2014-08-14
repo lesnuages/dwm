@@ -1,0 +1,18 @@
+--- config.def.h	Mon Dec 19 15:38:30 2011 +0100
++++ config.def.h	Tue Feb 28 11:28:54 2012 -0500
+@@ -27,11 +27,15 @@
+ static const int nmaster      = 1;    /* number of clients in master area */
+ static const Bool resizehints = True; /* True means respect size hints in tiled resizals */
+ 
++#include "bstack.c"
++#include "bstackhoriz.c"
+ static const Layout layouts[] = {
+ 	/* symbol     arrange function */
+ 	{ "[]=",      tile },    /* first entry is default */
+ 	{ "><>",      NULL },    /* no layout function means floating behavior */
+ 	{ "[M]",      monocle },
++	{ "TTT",      bstack },
++	{ "===",      bstackhoriz },
+ };
+ 
+ /* key definitions */
